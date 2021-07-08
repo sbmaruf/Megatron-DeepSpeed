@@ -76,7 +76,7 @@ class Encoder(object):
             Encoder.splitter = IdentitySplitter()
 
     def encode(self, json_line):
-        data = json.loads(json_line)
+        data = json.loads(json_line.strip())
         ids = {}
         for key in self.args.json_keys:
             text = data[key]
